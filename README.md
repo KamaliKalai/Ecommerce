@@ -1,4 +1,4 @@
-Got it! Here’s a clean **README.md** with **headings only**, no step numbers, ready for copy-paste:
+
 
 ---
 
