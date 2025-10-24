@@ -1,6 +1,6 @@
 
 
----
+
 
 # 🛍️ E-Commerce Web Application
 
@@ -8,7 +8,7 @@
 
 This is a **Spring Boot E-Commerce Web Application** that allows users to browse products, register, log in, and make purchases. Admins can manage products and view all customer orders.
 
----
+
 
 ## Features
 
@@ -25,7 +25,7 @@ This is a **Spring Boot E-Commerce Web Application** that allows users to browse
 * Add / Edit / Delete products
 * View all user orders
 
----
+
 
 ## Technologies Used
 
@@ -38,7 +38,6 @@ This is a **Spring Boot E-Commerce Web Application** that allows users to browse
 | Server     | Tomcat (embedded)       |
 | IDE        | Eclipse IDE             |
 
----
 
 ## Workflow
 
@@ -55,7 +54,7 @@ This is a **Spring Boot E-Commerce Web Application** that allows users to browse
 * Add, edit, or delete products
 * View all user orders
 
----
+
 
 ## Spring Boot Initialization
 
@@ -66,7 +65,7 @@ This is a **Spring Boot E-Commerce Web Application** that allows users to browse
 * Add Dependencies: Spring Web, Spring Data JPA, MySQL Driver, Thymeleaf, Spring Boot DevTools
 * Generate → Download → Import into Eclipse as **Existing Maven Project**
 
----
+
 
 ## Project Structure
 
@@ -114,7 +113,7 @@ mvnw.cmd
 pom.xml
 ```
 
----
+
 
 ## Database Setup
 
@@ -123,14 +122,14 @@ CREATE DATABASE ecommerce_db;
 INSERT INTO users (username, password, role) VALUES ('admin', 'admin123', 'ADMIN');
 ```
 
----
+
 
 ## Application Properties
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
 spring.datasource.username=root
-spring.datasource.password=Algoritz@123
+spring.datasource.password=YOUR PASSWORD
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
@@ -139,14 +138,13 @@ spring.thymeleaf.cache=false
 server.port=8080
 ```
 
----
+
 
 ## Default Admin Login
 
 * **Username:** admin
 * **Password:** admin123
 
----
 
 ## Run the Application
 
@@ -158,21 +156,20 @@ mvn spring-boot:run
 
 * Open browser: [http://localhost:8080/](http://localhost:8080/)
 
----
+
 
 ## User Login Workflow
 
 * Login at `/login`
 * Browse products, buy items, view orders
 
----
 
 ## Admin Login Workflow
 
 * Login at `/admin/login`
 * Add/Edit/Delete products, view all orders
 
----
+
 
 
 
