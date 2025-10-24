@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Orders</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9fafc;
+        margin: 40px;
+    }
+    h2 { color: #2c3e50; }
+    a {
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    a:hover { background: #0056b3; }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    th { background: #007bff; color: white; }
+</style>
+</head>
+<body><center>
+    <h2>My Orders</h2><br>
+
+    <a th:href="@{/user/dashboard}">Back to Dashboard</a>
+    <br><br>
+    <br>
+    <a th:href="@{/logout}">Logout</a></center><br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price (₹)</th>
+                <th>Total Amount (₹)</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.product.name}"></td>
+                <td th:text="${order.quantity}"></td>
+                <td th:text="${order.product.price}"></td>
+                <td th:text="${order.product.price * order.quantity}"></td>
+                <td th:text="${#temporals.format(order.orderDate, 'dd-MM-yyyy')}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Dashboard</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background: #f9fafc;
+    }
+    h2, h3 { color: #2c3e50; }
+    a, button {
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    a:hover, button:hover { background: #0056b3; }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background: white;
+        margin-top: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    th { background: #007bff; color: white; }
+    .top-links { margin-bottom: 20px; }
+    .back-btn {
+        background: #6c757d;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body><center>
+    <h2>Welcome, <span th:text="${user.username}">User</span>!</h2>
+
+    <div class="top-links">
+        <a th:href="@{/user/orders}">My Orders</a><br><br><br>
+        <a th:href="@{/logout}">Logout</a><br><br><br>
+        <a th:href="@{/login}" class="back-btn">Back to Login</a><br><br><br>
+    </div>
+</center>
+    <div th:if="${message}">
+        <p style="color:green; font-weight:bold;" th:text="${message}"></p>
+    </div>
+
+    <h3>Available Products</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Price</th><th>Stock</th><th>Quantity</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td>₹<span th:text="${product.price}"></span></td>
+                <td th:text="${product.stock}"></td>
+                <td>
+                    <form th:action="@{/user/confirm-buy/{id}(id=${product.id})}" method="get">
+                        <input type="number" name="quantity" min="1" th:attr="max=${product.stock}" value="1" />
+                        <button type="submit">Buy</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

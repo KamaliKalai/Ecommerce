@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard | E-Commerce</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="admin-page">
+    <center>
+        <div class="container">
+            <h2 th:text="${message}">Welcome, Admin</h2>
+            <br>
+
+            <div class="buttons">
+                <a th:href="@{/admin/add}" class="btn">Add Product</a><br><br>
+                <a th:href="@{/admin/products}" class="btn">View Products</a><br><br>
+                <a th:href="@{/admin/orders}" class="btn">View Orders</a><br><br>
+              
+                 <a th:href="@{/admin/login}" class="back-btn" >Back to Login</a><br><br><br>
+               
+            </div>
+        </div>
+    </center>
+</body>
+</html>

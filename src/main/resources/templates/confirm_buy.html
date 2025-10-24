@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Confirm Purchase</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        padding: 40px;
+    }
+    h2 { color: #2c3e50; }
+    p { font-size: 16px; }
+    strong { color: #007bff; }
+    form, a {
+        display: inline-block;
+        margin-top: 20px;
+    }
+    button, a {
+        background: #007bff;
+        color: white;
+        padding: 10px 18px;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    button:hover, a:hover { background: #0056b3; }
+    a.cancel-btn {
+        background: #6c757d;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>Confirm Your Purchase</h2>
+
+    <p><strong>Product:</strong> <span th:text="${product.name}"></span></p>
+    <p><strong>Quantity:</strong> <span th:text="${quantity}"></span></p>
+    <p><strong>Total Price:</strong> ₹<span th:text="${totalPrice}"></span></p>
+
+    <form th:action="@{/user/buy}" method="post">
+        <input type="hidden" name="productId" th:value="${product.id}" />
+        <input type="hidden" name="quantity" th:value="${quantity}" />
+        <button type="submit">Confirm Purchase</button>
+    </form>
+
+    <a th:href="@{/user/dashboard}" class="cancel-btn">Cancel</a>
+</body>
+</html>

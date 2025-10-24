@@ -1,0 +1,341 @@
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form input[type="text"], 
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Login buttons */
+.btn.primary {
+    background-color: #4CAF50;
+    color: #fff;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.btn.primary:hover {
+    background-color: #45a049;
+}
+
+.btn.link {
+    background-color: #2196F3;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.btn.link:hover {
+    background-color: #0b7dda;
+}
+
+.info-text {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.error-msg {
+    color: red;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+/* =========================
+   ADMIN PAGES
+   ========================= */
+.admin-page {
+    padding: 20px 0;
+}
+
+.admin-page .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-page h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Admin buttons */
+.admin-page .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.admin-page .btn:hover {
+    background-color: #0b7dda;
+}
+
+.admin-page .btn[style*="background-color: red"] {
+    background-color: #e74c3c !important;
+}
+
+.admin-page .btn[style*="background-color: orange"] {
+    background-color: #f39c12 !important;
+}
+
+.admin-page .btn[style*="background-color: gray"] {
+    background-color: #7f8c8d !important;
+}
+
+.admin-page .btn[style*="background-color: gray"]:hover {
+    background-color: #555 !important;
+}
+
+/* Admin forms */
+.admin-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-page form input[type="text"],
+.admin-page form input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.admin-page form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.admin-page form button:hover {
+    background-color: #45a049;
+}
+
+/* Admin tables */
+.admin-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.admin-page table th, 
+.admin-page table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin-page table th {
+    background-color: #2196F3;
+    color: white;
+}
+
+.admin-page table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admin-page table tr:hover {
+    background-color: #e8f4fd;
+}
+
+.admin-page .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-page .buttons .btn {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   USER PAGES
+   ========================= */
+.user-page {
+    padding: 20px 0;
+}
+
+.user-page .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.user-page h2, 
+.user-page h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* User buttons */
+.user-page .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.user-page .btn:hover {
+    background-color: #0b7dda;
+}
+
+/* User tables */
+.user-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.user-page table th, 
+.user-page table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.user-page table th {
+    background-color: #2196F3;
+    color: white;
+}
+
+.user-page table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-page table tr:hover {
+    background-color: #e8f4fd;
+}
+
+/* User forms */
+.user-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-page form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 600px) {
+    .admin-page .container,
+    .user-page .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    table td {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+    }
+}
